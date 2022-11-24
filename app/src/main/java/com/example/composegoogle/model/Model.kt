@@ -1,4 +1,4 @@
-package com.example.composegoogle
+package com.example.composegoogle.model
 
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty

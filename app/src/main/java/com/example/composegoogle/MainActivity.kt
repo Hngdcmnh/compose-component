@@ -5,18 +5,23 @@ import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.text.BasicTextField
-import androidx.compose.material.TextField
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.composegoogle.data.DataSource
+import com.example.composegoogle.model.ItemData
 import com.example.composegoogle.ui.theme.ComposeGoogleTheme
 
 class MainActivity : ComponentActivity() {
@@ -54,17 +59,67 @@ class MainActivity : ComponentActivity() {
 
         Log.e(this.javaClass.simpleName, "LemonApp")
 
-        // A surface container using the 'background' color from the theme
-        Column(verticalArrangement = Arrangement.Top) {
-            Surface(
-                modifier = modifier,
-                color = MaterialTheme.colorScheme.error
-            ) {
-                Log.e(this.javaClass.simpleName, "LemonApp")
-                EditNumberField(amountInput, onValueChange = { amountInput = it })
-            }
+        DataList(data = DataSource().loadData())
+    }
+    
+    @Composable
+    fun DataList(data:List<ItemData>, modifier: Modifier = Modifier) {
+//        LazyColumn{
+//            items(data){item ->
+//                Column {
+//                    Image(painter = painterResource(id = item.image), contentDescription = stringResource(
+//                        id = item.title
+//                    ))
+//                    Text(text = stringResource(id = item.title))
+//                }
+//
+//            }
+//        }
 
+//        LazyColumn{
+//            itemsIndexed(data){ _, item ->
+//                Column {
+//                    Image(painter = painterResource(id = item.image), contentDescription = stringResource(
+//                        id = item.title
+//                    ))
+//                    Text(text = stringResource(id = item.title))
+//                }
+//
+//            }
+//        }
+
+//        LazyHorizontalGrid(rows = GridCells.Fixed(2), content = {
+//            itemsIndexed(data){
+//                index,item->
+//                Column(horizontalAlignment = Alignment.Start, verticalArrangement = Arrangement.Top) {
+//                    Text(text = "1",)
+//                    Text(text = "2",)
+//                    Text(text = "3",)
+//                    Text(text = "4",)
+//                    Text(text = "5", modifier = Modifier.fillMaxSize(), textAlign = TextAlign.End)
+//                }
+//            }
+//        })
+        Column(horizontalAlignment = Alignment.Start, verticalArrangement = Arrangement.Top) {
+            Text(text = "1",)
+            Text(text = "2",)
+            Text(text = "3",)
+            Text(text = "4",)
+            Text(text = "5", modifier = Modifier.fillMaxSize().background(brush = Brush.horizontalGradient(
+                Pair(0f, Color.Blue),Pair(1f, Color.Red)
+            )), textAlign = TextAlign.Start, )
         }
+//        LazyHorizontalGrid(rows = GridCells.Fixed(2), content = {
+//            item(content = {
+//                Image(painter = painterResource(id = R.drawable.image2), contentDescription = "")
+//            })
+//            item(content = {
+//                Image(painter = painterResource(id = R.drawable.image3), contentDescription = "")
+//            })
+//            item(content = {
+//                Image(painter = painterResource(id = R.drawable.image4), contentDescription = "")
+//            })
+//        })
     }
 
     @Composable
