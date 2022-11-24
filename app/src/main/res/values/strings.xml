@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">Compose google</string>
     <string name="click">click</string>
+
+    <string name="title">I am strong.</string>
+    <string name="title2">I believe in myself.</string>
+    <string name="title3">Each day is a new opportunity to grow and be a better version of myself.</string>
+    <string name="title4">Every challenge in my life is an opportunity to learn from.</string>
+    <string name="title5">I have so much to be grateful for.</string>
+    <string name="title6">Good things are always coming into my life.</string>
+    <string name="title7">New opportunities await me at every turn.</string>
+    <string name="title8">I have the courage to follow my heart.</string>
+    <string name="title9">Things will unfold at precisely the right time.</string>
+    <string name="title0">I will be present in all the moments that this day brings.</string>
 </resources>
