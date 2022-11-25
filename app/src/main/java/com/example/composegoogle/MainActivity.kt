@@ -22,7 +22,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.composegoogle.data.DataSource
 import com.example.composegoogle.model.ItemData
-import com.example.composegoogle.ui.theme.ComposeGoogleTheme
+import com.example.composegoogle.ui.theme.TestTheme
 
 class MainActivity : ComponentActivity() {
     var a = 2
@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
 
 //        var name by delegateObject
         setContent {
-            ComposeGoogleTheme {
+            TestTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -64,50 +64,19 @@ class MainActivity : ComponentActivity() {
     
     @Composable
     fun DataList(data:List<ItemData>, modifier: Modifier = Modifier) {
-//        LazyColumn{
-//            items(data){item ->
-//                Column {
-//                    Image(painter = painterResource(id = item.image), contentDescription = stringResource(
-//                        id = item.title
-//                    ))
-//                    Text(text = stringResource(id = item.title))
-//                }
-//
-//            }
-//        }
 
-//        LazyColumn{
-//            itemsIndexed(data){ _, item ->
-//                Column {
-//                    Image(painter = painterResource(id = item.image), contentDescription = stringResource(
-//                        id = item.title
-//                    ))
-//                    Text(text = stringResource(id = item.title))
-//                }
-//
-//            }
-//        }
-
-//        LazyHorizontalGrid(rows = GridCells.Fixed(2), content = {
-//            itemsIndexed(data){
-//                index,item->
-//                Column(horizontalAlignment = Alignment.Start, verticalArrangement = Arrangement.Top) {
-//                    Text(text = "1",)
-//                    Text(text = "2",)
-//                    Text(text = "3",)
-//                    Text(text = "4",)
-//                    Text(text = "5", modifier = Modifier.fillMaxSize(), textAlign = TextAlign.End)
-//                }
-//            }
-//        })
         Column(horizontalAlignment = Alignment.Start, verticalArrangement = Arrangement.Top) {
             Text(text = "1",)
             Text(text = "2",)
             Text(text = "3",)
             Text(text = "4",)
-            Text(text = "5", modifier = Modifier.fillMaxSize().background(brush = Brush.horizontalGradient(
-                Pair(0f, Color.Blue),Pair(1f, Color.Red)
-            )), textAlign = TextAlign.Start, )
+            Text(text = "5", modifier = Modifier
+                .fillMaxSize()
+                .background(
+                    brush = Brush.horizontalGradient(
+                        Pair(0f, Color.Blue), Pair(1f, Color.Red)
+                    )
+                ), textAlign = TextAlign.Start, )
         }
 //        LazyHorizontalGrid(rows = GridCells.Fixed(2), content = {
 //            item(content = {
