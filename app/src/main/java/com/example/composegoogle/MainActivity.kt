@@ -11,7 +11,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             ComposeGoogleTheme {
-                MainScreen()
+                RaceTrackerApp()
             }
         }
     }
